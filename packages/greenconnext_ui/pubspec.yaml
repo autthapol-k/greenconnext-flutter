@@ -1,0 +1,31 @@
+name: greenconnext_ui
+description: UI Toolkit for GreenConnext.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.5
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.24.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  fonts:
+    - family: Google Sans
+      fonts:
+        - asset: assets/fonts/GoogleSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/GoogleSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/GoogleSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/GoogleSans-Italic.ttf
+          style: italic
