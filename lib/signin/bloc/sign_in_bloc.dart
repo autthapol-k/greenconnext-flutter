@@ -3,6 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 part 'sign_in_event.dart';
+
 part 'sign_in_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
@@ -22,8 +23,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       emit(SignInWithGoogleProgress());
       final idToken = await _authenticateRepository.signInWithGoogle();
       if (idToken != null) {
-        final sessionToken =
-            await _authenticateRepository.signInWithIdToken(idToken: idToken);
+        final sessionToken = await _authenticateRepository.signInWithIdToken(
+          idToken: idToken,
+        );
         if (sessionToken != null) {
           emit(SignInWithGoogleSuccess());
         }

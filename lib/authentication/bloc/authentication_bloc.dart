@@ -7,7 +7,7 @@ part 'authentication_state.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
-  AuthenticationBloc({required AuthenticateRepository authenticateRepository})
+  AuthenticationBloc({required AuthenticateRepository authenticateRepository,})
       : _authenticateRepository = authenticateRepository,
         super(const AuthenticationUnauthenticated()) {
     on<AuthenticationCheckSignedIn>(_checkIsAuthenticated);

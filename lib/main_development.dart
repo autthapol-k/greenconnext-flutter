@@ -5,6 +5,8 @@ import 'package:authenticate_repository/authenticate_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:user_credential_api/user_credential_api.dart';
 
 import 'app/app.dart';
 import 'bootstrap.dart';
@@ -18,9 +20,15 @@ void main() async {
   unawaited(
     bootstrap(
       () async {
+        final sharePreference = await SharedPreferences.getInstance();
+        final userCredentialApi = UserCredentialApi(
+          sharedPreferences: sharePreference,
+        );
+
         final apiClient = ApiClient(
           baseUrl: 'https://mutm-stg.azurewebsites.net',
           apiKey: 'am9A&8*T^DxMH2ZT\$xvhTE5U^a9a5%R5=',
+          userCredentialApi: userCredentialApi,
         );
         final googleSignIn = GoogleSignIn(
           clientId:
@@ -32,6 +40,7 @@ void main() async {
         final authenticateRepository = AuthenticateRepository(
           apiClient: apiClient,
           googleSignIn: googleSignIn,
+          userCredentialApi: userCredentialApi
         );
 
         return App(

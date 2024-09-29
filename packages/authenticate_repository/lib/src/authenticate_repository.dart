@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:api_client/api_client.dart';
 import 'package:dio/dio.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:user_credential_api/user_credential_api.dart';
 
 import '../authenticate_repository.dart';
 
@@ -10,10 +11,12 @@ class AuthenticateRepository {
   AuthenticateRepository({
     required this.apiClient,
     required this.googleSignIn,
+    required this.userCredentialApi,
   });
 
   final ApiClient apiClient;
   final GoogleSignIn googleSignIn;
+  final UserCredentialApi userCredentialApi;
 
   Future<String?> signInWithGoogle() async {
     try {
@@ -28,7 +31,13 @@ class AuthenticateRepository {
 
   Future<bool> isSignedIn() async {
     try {
-      return await googleSignIn.isSignedIn();
+      final isSignedIn = await googleSignIn.isSignedIn();
+      if (isSignedIn) {
+        final token = await userCredentialApi.getSessionToken();
+        return token != null;
+      } else {
+        return false;
+      }
     } catch (e, s) {
       throw AuthenticationException(e, s);
     }
@@ -43,7 +52,12 @@ class AuthenticateRepository {
         ),
       );
 
-      return SessionToken.fromJson(response.data['data']);
+      final token = SessionToken.fromJson(response.data['data']);
+      await userCredentialApi.saveSessionToken(
+        token: SessionTokenEntity.fromJson(token.toJson()),
+      );
+
+      return token;
     } catch (e, s) {
       throw AuthenticationException(e, s);
     }
@@ -52,6 +66,7 @@ class AuthenticateRepository {
   Future<void> signOut() async {
     try {
       await googleSignIn.signOut();
+      await userCredentialApi.clearCredential();
     } catch (e, s) {
       throw AuthenticationException(e, s);
     }

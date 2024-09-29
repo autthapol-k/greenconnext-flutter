@@ -1,11 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:ua_client_hints/ua_client_hints.dart';
+import 'package:user_credential_api/user_credential_api.dart';
 
 class ApiClient with DioMixin implements Dio {
   ApiClient({
     required String baseUrl,
     required String apiKey,
+    required UserCredentialApi userCredentialApi,
     BaseOptions? option,
   }) {
     option = BaseOptions(
@@ -22,6 +24,14 @@ class ApiClient with DioMixin implements Dio {
     options = option;
     interceptors.add(InterceptorsWrapper(onRequest: (option, handler) async {
       options.headers.addAll(await userAgentClientHintsHeader());
+
+      // attach access token
+      final sessionToken = await userCredentialApi.getSessionToken();
+      if (sessionToken != null) {
+        option.headers.addAll({
+          'Authorization': 'Bearer ${sessionToken.accessToken}',
+        });
+      }
       handler.next(option);
     }));
 

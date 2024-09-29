@@ -1,7 +1,7 @@
-name: authenticate_repository
+name: user_credential_api
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
-publish_to: none
+# repository: https://github.com/my_org/my_repo
 
 environment:
   sdk: ^3.5.3
@@ -9,14 +9,9 @@ environment:
 # Add regular dependencies here.
 dependencies:
   # path: ^1.8.0
-  dio: ^5.7.0
-  google_sign_in: ^6.2.1
+  shared_preferences: ^2.3.2
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  api_client:
-    path: ../api_client
-  user_credential_api:
-    path: ../user_credential_api
 
 dev_dependencies:
   lints: ^4.0.0

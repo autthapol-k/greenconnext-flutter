@@ -11,6 +11,9 @@ environment:
 dependencies:
   dio: ^5.7.0
   ua_client_hints: ^1.4.0
+  
+  user_credential_api:
+    path: ../user_credential_api
 
 dev_dependencies:
   lints: ^4.0.0
