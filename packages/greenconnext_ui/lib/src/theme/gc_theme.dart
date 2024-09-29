@@ -23,12 +23,13 @@ class GCTheme {
 
   ColorScheme get colorScheme {
     return ColorScheme.fromSeed(
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       seedColor: GCColors.googleBlue,
-      surface: GCColors.darkGray,
+      surface: GCColors.seedWhite,
       onSurface: GCColors.seedWhite,
       surfaceTint: GCColors.seedWhite,
       primary: GCColors.googleBlue,
+      outline: GCColors.softGray,
     );
   }
 

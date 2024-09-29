@@ -7,8 +7,8 @@
       "type": "dart",
       "program": "lib/main_development.dart",
       "args": [
-        "--flavor",
-        "development",
+        // "--flavor",
+        // "development",
         "--target",
         "lib/main_development.dart"
       ]
@@ -19,8 +19,8 @@
       "type": "dart",
       "program": "lib/main_staging.dart",
       "args": [
-        "--flavor",
-        "staging",
+        // "--flavor",
+        // "staging",
         "--target",
         "lib/main_staging.dart"
       ]
@@ -31,8 +31,8 @@
       "type": "dart",
       "program": "lib/main_production.dart",
       "args": [
-        "--flavor",
-        "production",
+        // "--flavor",
+        // "production",
         "--target",
         "lib/main_production.dart"
       ]

@@ -1,12 +1,18 @@
-class SessionToken {
-  const SessionToken(
-      {required this.type,
-      required this.accessToken,
-      required this.refreshToken,
-      required this.expiredIn});
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final String type;
-  final String accessToken;
-  final String refreshToken;
-  final int expiredIn;
+part 'session_token.freezed.dart';
+
+part 'session_token.g.dart';
+
+@freezed
+class SessionToken with _$SessionToken {
+  const factory SessionToken({
+    required String type,
+    required String accessToken,
+    required String refreshToken,
+    required int expiredIn,
+}) = _SessionToken;
+
+  factory SessionToken.fromJson(Map<String, dynamic> json) =>
+      _$SessionTokenFromJson(json);
 }
