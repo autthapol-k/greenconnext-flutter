@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../greenconnext_ui.dart';
+import 'package:greenconnext_ui/src/theme/theme.dart';
 
 class GCTheme {
   const GCTheme();
@@ -26,10 +25,11 @@ class GCTheme {
       brightness: Brightness.light,
       seedColor: GCColors.googleBlue,
       surface: GCColors.seedWhite,
-      onSurface: GCColors.seedWhite,
+      onSurface: GCColors.black,
       surfaceTint: GCColors.seedWhite,
       primary: GCColors.bstmGreen,
       outline: GCColors.softGray,
+      onPrimary: GCColors.seedWhite
     );
   }
 

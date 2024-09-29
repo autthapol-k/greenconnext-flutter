@@ -6,5 +6,9 @@
   "signInWithGoogle": "Sign in With Google",
   "homeTab": "Home",
   "classGroupTab": "Class Group",
-  "profileTab": "Profile"
+  "profileTab": "Profile",
+  "welcomeToBSTM": "Welcome to \nBSTM",
+  "noEvent": "No Event",
+  "seeCalendar": "See Calendar",
+  "highlightNews": "Highlight News"
 }

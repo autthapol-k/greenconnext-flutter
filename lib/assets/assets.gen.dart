@@ -38,6 +38,10 @@ class $AssetsIconsGen {
   SvgGenImage get icLinearHome =>
       const SvgGenImage('assets/icons/ic_linear_home.svg');
 
+  /// File path: assets/icons/ic_linear_notification.svg
+  SvgGenImage get icLinearNotification =>
+      const SvgGenImage('assets/icons/ic_linear_notification.svg');
+
   /// File path: assets/icons/ic_linear_profile_circle.svg
   SvgGenImage get icLinearProfileCircle =>
       const SvgGenImage('assets/icons/ic_linear_profile_circle.svg');
@@ -58,6 +62,7 @@ class $AssetsIconsGen {
         icBoldProfileCircle,
         icLinearClassGroup,
         icLinearHome,
+        icLinearNotification,
         icLinearProfileCircle,
         icSignInWithGoogle,
         icUniversityBadgeMu
@@ -67,6 +72,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bg_empty_calendar_events.png
+  AssetGenImage get bgEmptyCalendarEvents =>
+      const AssetGenImage('assets/images/bg_empty_calendar_events.png');
+
   /// File path: assets/images/bg_greenconnext_logo.png
   AssetGenImage get bgGreenconnextLogo =>
       const AssetGenImage('assets/images/bg_greenconnext_logo.png');
@@ -75,8 +84,13 @@ class $AssetsImagesGen {
   AssetGenImage get bgSignIn =>
       const AssetGenImage('assets/images/bg_sign_in.png');
 
+  /// File path: assets/images/bg_welcome_bstm.png
+  AssetGenImage get bgWelcomeBstm =>
+      const AssetGenImage('assets/images/bg_welcome_bstm.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [bgGreenconnextLogo, bgSignIn];
+  List<AssetGenImage> get values =>
+      [bgEmptyCalendarEvents, bgGreenconnextLogo, bgSignIn, bgWelcomeBstm];
 }
 
 class Assets {

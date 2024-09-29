@@ -18,7 +18,11 @@ class MainPage extends StatelessWidget {
     );
 
     return AutoTabsScaffold(
-      routes: const [HomeRoute(), ClassGroupRoute(), ProfileRoute()],
+      routes: const [
+        HomeRoute(),
+        ClassGroupRoute(),
+        ProfileRoute(),
+      ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
           currentIndex: tabsRouter.activeIndex,
