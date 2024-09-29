@@ -3,5 +3,8 @@
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   },
-  "signInWithGoogle": "Sign in With Google"
+  "signInWithGoogle": "Sign in With Google",
+  "homeTab": "Home",
+  "classGroupTab": "Class Group",
+  "profileTab": "Profile"
 }

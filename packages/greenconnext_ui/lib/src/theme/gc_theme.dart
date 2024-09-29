@@ -28,7 +28,7 @@ class GCTheme {
       surface: GCColors.seedWhite,
       onSurface: GCColors.seedWhite,
       surfaceTint: GCColors.seedWhite,
-      primary: GCColors.googleBlue,
+      primary: GCColors.bstmGreen,
       outline: GCColors.softGray,
     );
   }

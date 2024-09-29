@@ -18,6 +18,30 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_BSCM.svg
   SvgGenImage get icBSCM => const SvgGenImage('assets/icons/ic_BSCM.svg');
 
+  /// File path: assets/icons/ic_bold_class_group.svg
+  SvgGenImage get icBoldClassGroup =>
+      const SvgGenImage('assets/icons/ic_bold_class_group.svg');
+
+  /// File path: assets/icons/ic_bold_home.svg
+  SvgGenImage get icBoldHome =>
+      const SvgGenImage('assets/icons/ic_bold_home.svg');
+
+  /// File path: assets/icons/ic_bold_profile_circle.svg
+  SvgGenImage get icBoldProfileCircle =>
+      const SvgGenImage('assets/icons/ic_bold_profile_circle.svg');
+
+  /// File path: assets/icons/ic_linear_class_group.svg
+  SvgGenImage get icLinearClassGroup =>
+      const SvgGenImage('assets/icons/ic_linear_class_group.svg');
+
+  /// File path: assets/icons/ic_linear_home.svg
+  SvgGenImage get icLinearHome =>
+      const SvgGenImage('assets/icons/ic_linear_home.svg');
+
+  /// File path: assets/icons/ic_linear_profile_circle.svg
+  SvgGenImage get icLinearProfileCircle =>
+      const SvgGenImage('assets/icons/ic_linear_profile_circle.svg');
+
   /// File path: assets/icons/ic_sign_in_with_google.svg
   SvgGenImage get icSignInWithGoogle =>
       const SvgGenImage('assets/icons/ic_sign_in_with_google.svg');
@@ -27,8 +51,17 @@ class $AssetsIconsGen {
       const SvgGenImage('assets/icons/ic_university_badge_mu.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icBSCM, icSignInWithGoogle, icUniversityBadgeMu];
+  List<SvgGenImage> get values => [
+        icBSCM,
+        icBoldClassGroup,
+        icBoldHome,
+        icBoldProfileCircle,
+        icLinearClassGroup,
+        icLinearHome,
+        icLinearProfileCircle,
+        icSignInWithGoogle,
+        icUniversityBadgeMu
+      ];
 }
 
 class $AssetsImagesGen {

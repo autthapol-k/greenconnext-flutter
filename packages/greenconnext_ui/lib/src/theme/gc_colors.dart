@@ -57,4 +57,6 @@ abstract class GCColors {
 
   /// error red color
   static const redError = Color(0xFFEA4335);
+  
+  static const bstmGreen = Color(0xFF004F26);
 }

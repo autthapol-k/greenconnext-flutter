@@ -22,7 +22,7 @@ class SplashPage extends StatelessWidget {
               case AuthenticationUnauthenticated():
                 context.replaceRoute(const SignInRoute());
               case AuthenticationAuthenticated():
-                context.replaceRoute(const HomeRoute());
+                context.replaceRoute(const MainRoute());
             }
           },
           child: Center(

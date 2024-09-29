@@ -36,7 +36,7 @@ class SignInPage extends StatelessWidget {
               case SignInWithGoogleProgress():
                 break;
               case SignInWithGoogleSuccess():
-                context.router.replace(const HomeRoute());
+                context.router.replace(const MainRoute());
                 break;
               case SignInWithGoogleError():
                 break;
